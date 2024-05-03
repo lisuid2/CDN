@@ -10,37 +10,15 @@
       ]
     },
     {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store"
-        }
-      ]
-    },
-    {
-      "source": "(.*\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, immutable, max-age=31536000"
-        }, 
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
-      ]
-    },
-    {
       "source": "(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=86400"
+          "value": "public, s-maxage=86400, max-age=86400"
         }, 
         {
-          "key": "Vary",
-          "value": "Accept-Encoding, Authorization"
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "max-age=86400"
         }
       ]
     }
